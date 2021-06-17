@@ -50,18 +50,32 @@ class VClass {
       "hello2",
       "app"
     );
+    var x = 2;
   };
-
-  async testMethod3() {
+  testMethod3 = function () {
     Logger.logV(
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod3",
-        line: 23,
+        line: 24,
+      },
+      "hello2",
+      "app"
+    );
+    var x = 2;
+  };
+
+  async testMethod4() {
+    Logger.logV(
+      {
+        file: "test/fixtures/logger/code.js",
+        func: "testMethod4",
+        line: 29,
       },
       "hello3",
       "app"
     );
+    var x = 2;
   }
 } // INFO
 
@@ -70,7 +84,7 @@ function somethingI() {
     {
       file: "test/fixtures/logger/code.js",
       func: "somethingI",
-      line: 30,
+      line: 37,
     },
     "groupId",
     "hello"
@@ -83,7 +97,7 @@ function* generatorI() {
     {
       file: "test/fixtures/logger/code.js",
       func: "generatorI",
-      line: 35,
+      line: 42,
     },
     "groupId",
     "hello"
@@ -97,7 +111,7 @@ class IClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod",
-        line: 41,
+        line: 48,
       },
       "groupId",
       "hello"
@@ -110,7 +124,7 @@ class IClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod2",
-        line: 46,
+        line: 53,
       },
       "groupId",
       "hello"
@@ -122,7 +136,7 @@ class IClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod3",
-        line: 50,
+        line: 57,
       },
       "groupId",
       "hello"
@@ -135,7 +149,7 @@ function somethingW() {
     {
       file: "test/fixtures/logger/code.js",
       func: "somethingW",
-      line: 57,
+      line: 64,
     },
     "groupId",
     "hello",
@@ -149,7 +163,7 @@ function* generatorW() {
     {
       file: "test/fixtures/logger/code.js",
       func: "generatorW",
-      line: 62,
+      line: 69,
     },
     "groupId",
     "hello",
@@ -164,7 +178,7 @@ class WClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod",
-        line: 68,
+        line: 75,
       },
       "groupId",
       "hello",
@@ -178,7 +192,7 @@ class WClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod2",
-        line: 73,
+        line: 80,
       },
       "groupId",
       "hello",
@@ -192,7 +206,7 @@ class WClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod3",
-        line: 78,
+        line: 85,
       },
       "groupId",
       "hello",
@@ -207,7 +221,7 @@ function somethingE() {
     {
       file: "test/fixtures/logger/code.js",
       func: "somethingE",
-      line: 86,
+      line: 93,
     },
     "hello",
     "app"
@@ -220,7 +234,7 @@ function* generatorE() {
     {
       file: "test/fixtures/logger/code.js",
       func: "generatorE",
-      line: 91,
+      line: 98,
     },
     "hello",
     "app"
@@ -234,7 +248,7 @@ class EClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod",
-        line: 97,
+        line: 104,
       },
       "hello",
       "app"
@@ -247,7 +261,7 @@ class EClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod2",
-        line: 102,
+        line: 109,
       },
       "hello",
       "app"
@@ -260,7 +274,7 @@ class EClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod3",
-        line: 107,
+        line: 114,
       },
       "hello",
       "app"

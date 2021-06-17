@@ -17,10 +17,17 @@ class VClass {
 
   testMethod2 = async () => {
     logV("hello2");
+    var x = 2;
   };
 
-  async testMethod3() {
+  testMethod3 = function () {
+    logV("hello2");
+    var x = 2;
+  };
+
+  async testMethod4() {
     logV("hello3");
+    var x = 2;
   }
 }
 

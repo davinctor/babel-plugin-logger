@@ -4,12 +4,12 @@ const getFunctionName = (path) => {
     case "ClassMethod": {
       return functionParent.node.key.name;
     }
-    case "FunctionDeclaration":
-    case "FunctionExpression": {
+    case "FunctionDeclaration": {
       return functionParent.node.id.name;
     }
+    case "FunctionExpression":
     case "ArrowFunctionExpression": {
-      return functionParent.container.key.name;
+      return functionParent.parent.key.name;
     }
     default: {
       throw new Error(`Unsupported: ${functionParent.type} parent`);

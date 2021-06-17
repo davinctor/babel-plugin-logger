@@ -10,14 +10,14 @@ var getFunctionName = path => {
       }
 
     case "FunctionDeclaration":
-    case "FunctionExpression":
       {
         return functionParent.node.id.name;
       }
 
+    case "FunctionExpression":
     case "ArrowFunctionExpression":
       {
-        return functionParent.container.key.name;
+        return functionParent.parent.key.name;
       }
 
     default:
