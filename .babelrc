@@ -10,6 +10,14 @@
     ]
   ],
   "ignore": [
-    "node_modules"
+    "node_modules",
+    "assets",
+    "view",
+    "public",
+    "test",
+    "spec",
+    "logs",
+    "lib/jasmine_examples",
+    "db"
   ]
 }
