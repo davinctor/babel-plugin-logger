@@ -8,5 +8,8 @@
         }
       }
     ]
+  ],
+  "ignore": [
+    "node_modules"
   ]
 }
