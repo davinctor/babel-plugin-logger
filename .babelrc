@@ -14,8 +14,6 @@
     "assets",
     "view",
     "public",
-    "test",
-    "spec",
     "logs",
     "lib/jasmine_examples",
     "db"

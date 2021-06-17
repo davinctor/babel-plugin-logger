@@ -59,6 +59,12 @@ module.exports = function (_ref) {
     name: "babel-plugin-logger",
     visitor: {
       Program(path, options) {
+        var filePath = this.file.opts.filename || "";
+
+        if (filePath.includes("node_modules")) {
+          return;
+        }
+
         var importPath = getImportPathOrCrash(options);
         var isClassImplementation = options.opts.isClass;
         var identifier = t.identifier(isClassImplementation ? "Logger" : " * as Logger");
@@ -68,6 +74,12 @@ module.exports = function (_ref) {
       },
 
       CallExpression(path, options) {
+        var filePath = this.file.opts.filename || "";
+
+        if (filePath.includes("node_modules")) {
+          return;
+        }
+
         getImportPathOrCrash(options);
         var functionsNames = getLoggerFunctionNamesOrCrash(options);
         var defaultGroup = getDefaultGroupNameOrCrash(options);
@@ -79,7 +91,6 @@ module.exports = function (_ref) {
 
         var relativePath = "";
         var cwd = process.cwd && process.cwd();
-        var filePath = this.file.opts.filename || "";
 
         if (filePath.charAt(0) !== "/") {
           relativePath = filePath;
