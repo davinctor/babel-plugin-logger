@@ -1,0 +1,24 @@
+{
+  "name": "babel-logger-plugin",
+  "version": "0.1.0",
+  "description": "The babel plugin replaces custom log functions with custom logger invocations.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/davinctor/babel-plugin-logger.git"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "logger",
+    "logs",
+    "babel"
+  ],
+  "author": "Viktor Ponomarenko vponomarenko.me@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-plugin-tester": "^10.1.0",
+    "jest": "^27.0.4"
+  }
+}
