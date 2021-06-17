@@ -1,5 +1,5 @@
 {
-  "name": "babel-logger-plugin",
+  "name": "babel-plugin-logger",
   "version": "0.1.0",
   "description": "The babel plugin replaces custom log functions with custom logger invocations.",
   "main": "index.js",
