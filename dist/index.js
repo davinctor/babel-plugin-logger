@@ -1,17 +1,23 @@
 "use strict";
 
 var getFunctionName = path => {
-  var functionParent = path.getFunctionParent().node;
+  var functionParent = path.getFunctionParent();
 
   switch (functionParent.type) {
     case "ClassMethod":
       {
-        return functionParent.key.name;
+        return functionParent.node.key.name;
       }
 
     case "FunctionDeclaration":
+    case "FunctionExpression":
       {
-        return functionParent.id.name;
+        return functionParent.node.id.name;
+      }
+
+    case "ArrowFunctionExpression":
+      {
+        return functionParent.container.key.name;
       }
 
     default:

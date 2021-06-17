@@ -1,11 +1,15 @@
 const getFunctionName = (path) => {
-  const functionParent = path.getFunctionParent().node;
+  const functionParent = path.getFunctionParent();
   switch (functionParent.type) {
     case "ClassMethod": {
-      return functionParent.key.name;
+      return functionParent.node.key.name;
     }
-    case "FunctionDeclaration": {
-      return functionParent.id.name;
+    case "FunctionDeclaration":
+    case "FunctionExpression": {
+      return functionParent.node.id.name;
+    }
+    case "ArrowFunctionExpression": {
+      return functionParent.container.key.name;
     }
     default: {
       throw new Error(`Unsupported: ${functionParent.type} parent`);

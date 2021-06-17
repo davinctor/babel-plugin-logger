@@ -39,6 +39,30 @@ class VClass {
       "app"
     );
   }
+
+  testMethod2 = async () => {
+    Logger.logV(
+      {
+        file: "test/fixtures/logger/code.js",
+        func: "testMethod2",
+        line: 19,
+      },
+      "hello2",
+      "app"
+    );
+  };
+
+  async testMethod3() {
+    Logger.logV(
+      {
+        file: "test/fixtures/logger/code.js",
+        func: "testMethod3",
+        line: 23,
+      },
+      "hello3",
+      "app"
+    );
+  }
 } // INFO
 
 function somethingI() {
@@ -46,7 +70,7 @@ function somethingI() {
     {
       file: "test/fixtures/logger/code.js",
       func: "somethingI",
-      line: 22,
+      line: 30,
     },
     "groupId",
     "hello"
@@ -59,7 +83,7 @@ function* generatorI() {
     {
       file: "test/fixtures/logger/code.js",
       func: "generatorI",
-      line: 27,
+      line: 35,
     },
     "groupId",
     "hello"
@@ -73,12 +97,36 @@ class IClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod",
-        line: 33,
+        line: 41,
       },
       "groupId",
       "hello"
     );
     var x = 2;
+  }
+
+  testMethod2 = async () => {
+    Logger.logI(
+      {
+        file: "test/fixtures/logger/code.js",
+        func: "testMethod2",
+        line: 46,
+      },
+      "groupId",
+      "hello"
+    );
+  };
+
+  async testMethod3() {
+    Logger.logI(
+      {
+        file: "test/fixtures/logger/code.js",
+        func: "testMethod3",
+        line: 50,
+      },
+      "groupId",
+      "hello"
+    );
   }
 } // WARNING
 
@@ -87,7 +135,7 @@ function somethingW() {
     {
       file: "test/fixtures/logger/code.js",
       func: "somethingW",
-      line: 41,
+      line: 57,
     },
     "groupId",
     "hello",
@@ -101,7 +149,7 @@ function* generatorW() {
     {
       file: "test/fixtures/logger/code.js",
       func: "generatorW",
-      line: 46,
+      line: 62,
     },
     "groupId",
     "hello",
@@ -116,7 +164,35 @@ class WClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod",
-        line: 52,
+        line: 68,
+      },
+      "groupId",
+      "hello",
+      ["capability"]
+    );
+    var x = 2;
+  }
+
+  testMethod2 = async () => {
+    Logger.logW(
+      {
+        file: "test/fixtures/logger/code.js",
+        func: "testMethod2",
+        line: 73,
+      },
+      "groupId",
+      "hello",
+      ["capability"]
+    );
+    var x = 2;
+  };
+
+  async testMethod3() {
+    Logger.logW(
+      {
+        file: "test/fixtures/logger/code.js",
+        func: "testMethod3",
+        line: 78,
       },
       "groupId",
       "hello",
@@ -131,7 +207,7 @@ function somethingE() {
     {
       file: "test/fixtures/logger/code.js",
       func: "somethingE",
-      line: 60,
+      line: 86,
     },
     "hello",
     "app"
@@ -144,7 +220,7 @@ function* generatorE() {
     {
       file: "test/fixtures/logger/code.js",
       func: "generatorE",
-      line: 65,
+      line: 91,
     },
     "hello",
     "app"
@@ -158,7 +234,33 @@ class EClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod",
-        line: 71,
+        line: 97,
+      },
+      "hello",
+      "app"
+    );
+    var x = 2;
+  }
+
+  testMethod2 = async () => {
+    Logger.logE(
+      {
+        file: "test/fixtures/logger/code.js",
+        func: "testMethod2",
+        line: 102,
+      },
+      "hello",
+      "app"
+    );
+    var x = 2;
+  };
+
+  async testMethod3() {
+    Logger.logE(
+      {
+        file: "test/fixtures/logger/code.js",
+        func: "testMethod3",
+        line: 107,
       },
       "hello",
       "app"
@@ -171,7 +273,7 @@ function shouldBeIgnoredI() {
   Logger.logV(
     {
       file: "FILE",
-      func: "FUNCTIO_NAME",
+      func: "FUNCTION_NAME",
       line: 1,
     },
     "Test message"
@@ -179,7 +281,7 @@ function shouldBeIgnoredI() {
   Logger.logI(
     {
       file: "FILE",
-      func: "FUNCTIO_NAME",
+      func: "FUNCTION_NAME",
       line: 1,
     },
     {
@@ -189,7 +291,7 @@ function shouldBeIgnoredI() {
   Logger.logW(
     {
       file: "FILE",
-      func: "FUNCTIO_NAME",
+      func: "FUNCTION_NAME",
       line: 1,
     },
     {
@@ -200,7 +302,7 @@ function shouldBeIgnoredI() {
   Logger.logE(
     {
       file: "FILE",
-      func: "FUNCTIO_NAME",
+      func: "FUNCTION_NAME",
       line: 1,
     },
     "Test message",

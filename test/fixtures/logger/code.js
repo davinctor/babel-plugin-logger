@@ -14,6 +14,14 @@ class VClass {
   testMethod() {
     logV("hello");
   }
+
+  testMethod2 = async () => {
+    logV("hello2");
+  };
+
+  async testMethod3() {
+    logV("hello3");
+  }
 }
 
 // INFO
@@ -33,6 +41,14 @@ class IClass {
     logI("groupId", "hello");
     var x = 2;
   }
+
+  testMethod2 = async () => {
+    logI("groupId", "hello");
+  };
+
+  async testMethod3() {
+    logI("groupId", "hello");
+  }
 }
 
 // WARNING
@@ -49,6 +65,16 @@ function* generatorW() {
 
 class WClass {
   testMethod() {
+    logW("groupId", "hello", ["capability"]);
+    var x = 2;
+  }
+
+  testMethod2 = async () => {
+    logW("groupId", "hello", ["capability"]);
+    var x = 2;
+  };
+
+  async testMethod3() {
     logW("groupId", "hello", ["capability"]);
     var x = 2;
   }
@@ -71,6 +97,16 @@ class EClass {
     logE("hello");
     var x = 2;
   }
+
+  testMethod2 = async () => {
+    logE("hello");
+    var x = 2;
+  };
+
+  async testMethod3() {
+    logE("hello");
+    var x = 2;
+  }
 }
 
 // IGNORES
@@ -79,7 +115,7 @@ function shouldBeIgnoredI() {
   Logger.logV(
     {
       file: "FILE",
-      func: "FUNCTIO_NAME",
+      func: "FUNCTION_NAME",
       line: 1,
     },
     "Test message"
@@ -88,7 +124,7 @@ function shouldBeIgnoredI() {
   Logger.logI(
     {
       file: "FILE",
-      func: "FUNCTIO_NAME",
+      func: "FUNCTION_NAME",
       line: 1,
     },
     {
@@ -99,7 +135,7 @@ function shouldBeIgnoredI() {
   Logger.logW(
     {
       file: "FILE",
-      func: "FUNCTIO_NAME",
+      func: "FUNCTION_NAME",
       line: 1,
     },
     {
@@ -111,7 +147,7 @@ function shouldBeIgnoredI() {
   Logger.logE(
     {
       file: "FILE",
-      func: "FUNCTIO_NAME",
+      func: "FUNCTION_NAME",
       line: 1,
     },
     "Test message",
