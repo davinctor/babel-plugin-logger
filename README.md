@@ -43,6 +43,7 @@ Sample of plugin configuration:
         importPath: "core/logger",
         functionsNames: ["logV", "logI", "logW", "logE"],
         defaultGroupName: "app",
+        excluded: ["node_modules"]
       },
     ]
   ]
@@ -54,6 +55,7 @@ Sample of plugin configuration:
 - `functionNames` - the custom logger implementation methods (**required**)
 - `defaultGroupName` - the logger default group name when is not provided (**required**)
 - `isClass` - helps plugin to understand how to import log functions. Default value is `false`.
+- `exclude` - the list of patterns for file should be excluded from traversing (transforming) process
 
 ## Running the tests
 `yarn test` or `npm run test`

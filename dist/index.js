@@ -51,6 +51,15 @@ var getDefaultGroupNameOrCrash = options => {
   return defaultGroupName;
 };
 
+var getFileName = plugin => plugin.file.opts.filename || "";
+
+var getExcludePatterns = options => options.opts.exclude || [];
+
+var shouldFileBeIgnored = (plugin, options) => {
+  var filePath = getFileName(plugin);
+  return getExcludePatterns(options).find(pattern => new RegExp(pattern).test(filePath));
+};
+
 module.exports = function (_ref) {
   var {
     types: t
@@ -59,9 +68,7 @@ module.exports = function (_ref) {
     name: "babel-plugin-logger",
     visitor: {
       Program(path, options) {
-        var filePath = this.file.opts.filename || "";
-
-        if (filePath.includes("node_modules")) {
+        if (shouldFileBeIgnored(this, options)) {
           return;
         }
 
@@ -74,12 +81,11 @@ module.exports = function (_ref) {
       },
 
       CallExpression(path, options) {
-        var filePath = this.file.opts.filename || "";
-
-        if (filePath.includes("node_modules")) {
+        if (shouldFileBeIgnored(this, options)) {
           return;
         }
 
+        var filePath = getFileName(this);
         getImportPathOrCrash(options);
         var functionsNames = getLoggerFunctionNamesOrCrash(options);
         var defaultGroup = getDefaultGroupNameOrCrash(options);

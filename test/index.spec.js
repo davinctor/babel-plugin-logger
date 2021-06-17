@@ -11,6 +11,7 @@ pluginTester({
     functionsNames: ["logV", "logI", "logW", "logE"],
     defaultGroupName: "app",
     isClass: true,
+    exclude: [],
   },
   fixtures: path.join(__dirname, "fixtures"),
 });
