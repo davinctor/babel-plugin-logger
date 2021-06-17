@@ -1,10 +1,10 @@
 # babel-plugin-logger
-The babel plugin replaces custom log functions with custom logger invocations.
-The first argument would be provided with a code location description. You don't need anymore to write imports and hardcode function names or line numbers.
-Comes in handy for ReactNative applications when it's not possible to retrieve code information in runtime.
+The babel plugin replaces custom log functions with custom logger invocations.  
+The first argument would be provided with a code location description. You don't need anymore to write imports and hardcode function names or line numbers.  
+Comes in handy for ReactNative applications when it's not possible to retrieve code information in runtime.  
 
 ## How to install
-npm: `npm i -D davinctor/babel-plugin-logger#main`
+npm: `npm i -D davinctor/babel-plugin-logger#main`  
 yarn: `yarn add 'babel-plugin-logger@https://github.com/davinctor/babel-plugin-logger#head=main'`
 
 ## How to use it?
