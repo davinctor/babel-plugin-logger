@@ -48,6 +48,11 @@ module.exports = function ({ types: t }) {
     name: "babel-plugin-logger",
     visitor: {
       Program(path, options) {
+        const filePath = this.file.opts.filename || "";
+        if (filePath.includes("node_modules")) {
+          return;
+        }
+
         const importPath = getImportPathOrCrash(options);
         const isClassImplementation = options.opts.isClass;
         const identifier = t.identifier(
@@ -61,6 +66,11 @@ module.exports = function ({ types: t }) {
         path.unshiftContainer("body", importDeclaration);
       },
       CallExpression(path, options) {
+        const filePath = this.file.opts.filename || "";
+        if (filePath.includes("node_modules")) {
+          return;
+        }
+
         getImportPathOrCrash(options);
         const functionsNames = getLoggerFunctionNamesOrCrash(options);
         const defaultGroup = getDefaultGroupNameOrCrash(options);
@@ -74,7 +84,6 @@ module.exports = function ({ types: t }) {
 
         let relativePath = "";
         const cwd = process.cwd && process.cwd();
-        const filePath = this.file.opts.filename || "";
 
         if (filePath.charAt(0) !== "/") {
           relativePath = filePath;
