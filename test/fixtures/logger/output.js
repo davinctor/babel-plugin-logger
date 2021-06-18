@@ -14,12 +14,25 @@ function somethingV() {
   var x = 2;
 }
 
+const somethingArrowV = () => {
+  Logger.logV(
+    {
+      file: "test/fixtures/logger/code.js",
+      func: "somethingArrowV",
+      line: 9,
+    },
+    "hello",
+    "app"
+  );
+  var x = 2;
+};
+
 function* generatorV() {
   Logger.logV(
     {
       file: "test/fixtures/logger/code.js",
       func: "generatorV",
-      line: 9,
+      line: 14,
     },
     "hello",
     "app"
@@ -33,7 +46,7 @@ class VClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod",
-        line: 15,
+        line: 20,
       },
       "hello",
       "app"
@@ -45,7 +58,7 @@ class VClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod2",
-        line: 19,
+        line: 24,
       },
       "hello2",
       "app"
@@ -57,7 +70,7 @@ class VClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod3",
-        line: 24,
+        line: 29,
       },
       "hello2",
       "app"
@@ -70,7 +83,7 @@ class VClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod4",
-        line: 29,
+        line: 34,
       },
       "hello3",
       "app"
@@ -84,7 +97,7 @@ function somethingI() {
     {
       file: "test/fixtures/logger/code.js",
       func: "somethingI",
-      line: 37,
+      line: 42,
     },
     "groupId",
     "hello"
@@ -92,12 +105,25 @@ function somethingI() {
   var x = 2;
 }
 
+const somethingArrowI = () => {
+  Logger.logI(
+    {
+      file: "test/fixtures/logger/code.js",
+      func: "somethingArrowI",
+      line: 47,
+    },
+    "groupId",
+    "hello"
+  );
+  var x = 2;
+};
+
 function* generatorI() {
   Logger.logI(
     {
       file: "test/fixtures/logger/code.js",
       func: "generatorI",
-      line: 42,
+      line: 52,
     },
     "groupId",
     "hello"
@@ -111,7 +137,7 @@ class IClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod",
-        line: 48,
+        line: 58,
       },
       "groupId",
       "hello"
@@ -124,7 +150,7 @@ class IClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod2",
-        line: 53,
+        line: 63,
       },
       "groupId",
       "hello"
@@ -136,7 +162,7 @@ class IClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod3",
-        line: 57,
+        line: 67,
       },
       "groupId",
       "hello"
@@ -149,7 +175,7 @@ function somethingW() {
     {
       file: "test/fixtures/logger/code.js",
       func: "somethingW",
-      line: 64,
+      line: 74,
     },
     "groupId",
     "hello",
@@ -158,12 +184,26 @@ function somethingW() {
   var x = 2;
 }
 
+const somethingArrowW = () => {
+  Logger.logW(
+    {
+      file: "test/fixtures/logger/code.js",
+      func: "somethingArrowW",
+      line: 79,
+    },
+    "groupId",
+    "hello",
+    ["capability"]
+  );
+  var x = 2;
+};
+
 function* generatorW() {
   Logger.logW(
     {
       file: "test/fixtures/logger/code.js",
       func: "generatorW",
-      line: 69,
+      line: 84,
     },
     "groupId",
     "hello",
@@ -178,7 +218,7 @@ class WClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod",
-        line: 75,
+        line: 90,
       },
       "groupId",
       "hello",
@@ -192,7 +232,7 @@ class WClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod2",
-        line: 80,
+        line: 95,
       },
       "groupId",
       "hello",
@@ -206,7 +246,7 @@ class WClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod3",
-        line: 85,
+        line: 100,
       },
       "groupId",
       "hello",
@@ -221,7 +261,7 @@ function somethingE() {
     {
       file: "test/fixtures/logger/code.js",
       func: "somethingE",
-      line: 93,
+      line: 108,
     },
     "hello",
     "app"
@@ -229,12 +269,25 @@ function somethingE() {
   var x = 2;
 }
 
+const somethingArrowE = () => {
+  Logger.logE(
+    {
+      file: "test/fixtures/logger/code.js",
+      func: "somethingArrowE",
+      line: 113,
+    },
+    "hello",
+    "app"
+  );
+  var x = 2;
+};
+
 function* generatorE() {
   Logger.logE(
     {
       file: "test/fixtures/logger/code.js",
       func: "generatorE",
-      line: 98,
+      line: 118,
     },
     "hello",
     "app"
@@ -248,7 +301,7 @@ class EClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod",
-        line: 104,
+        line: 124,
       },
       "hello",
       "app"
@@ -261,7 +314,7 @@ class EClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod2",
-        line: 109,
+        line: 129,
       },
       "hello",
       "app"
@@ -274,7 +327,7 @@ class EClass {
       {
         file: "test/fixtures/logger/code.js",
         func: "testMethod3",
-        line: 114,
+        line: 134,
       },
       "hello",
       "app"

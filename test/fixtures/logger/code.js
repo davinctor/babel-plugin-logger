@@ -5,6 +5,11 @@ function somethingV() {
   var x = 2;
 }
 
+const somethingArrowV = () => {
+  logV("hello");
+  var x = 2;
+};
+
 function* generatorV() {
   logV("hello");
   var x = 2;
@@ -38,6 +43,11 @@ function somethingI() {
   var x = 2;
 }
 
+const somethingArrowI = () => {
+  logI("groupId", "hello");
+  var x = 2;
+};
+
 function* generatorI() {
   logI("groupId", "hello");
   var x = 2;
@@ -64,6 +74,11 @@ function somethingW() {
   logW("groupId", "hello", ["capability"]);
   var x = 2;
 }
+
+const somethingArrowW = () => {
+  logW("groupId", "hello", ["capability"]);
+  var x = 2;
+};
 
 function* generatorW() {
   logW("groupId", "hello", ["capability"]);
@@ -93,6 +108,11 @@ function somethingE() {
   logE("hello");
   var x = 2;
 }
+
+const somethingArrowE = () => {
+  logE("hello");
+  var x = 2;
+};
 
 function* generatorE() {
   logE("hello");

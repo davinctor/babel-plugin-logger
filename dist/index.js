@@ -17,7 +17,9 @@ var getFunctionName = path => {
     case "FunctionExpression":
     case "ArrowFunctionExpression":
       {
-        return functionParent.parent.key.name;
+        var _functionParent$paren, _functionParent$conta;
+
+        return ((_functionParent$paren = functionParent.parent.key) === null || _functionParent$paren === void 0 ? void 0 : _functionParent$paren.name) || ((_functionParent$conta = functionParent.container.id) === null || _functionParent$conta === void 0 ? void 0 : _functionParent$conta.name);
       }
 
     default:

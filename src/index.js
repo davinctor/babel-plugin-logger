@@ -9,7 +9,9 @@ const getFunctionName = (path) => {
     }
     case "FunctionExpression":
     case "ArrowFunctionExpression": {
-      return functionParent.parent.key.name;
+      return (
+        functionParent.parent.key?.name || functionParent.container.id?.name
+      );
     }
     default: {
       throw new Error(`Unsupported: ${functionParent.type} parent`);
