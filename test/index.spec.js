@@ -6,7 +6,7 @@ const path = require("path");
 
 pluginTester({
   plugin,
-  babelOptions: require("../babel.config.js"),
+  babelOptions: require("./fixtures/logger/babel.config"),
   pluginOptions: {
     importPath: "core/functions/logger",
     functionsNames: ["logV", "logI", "logW", "logE"],
