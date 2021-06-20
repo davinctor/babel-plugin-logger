@@ -9,8 +9,17 @@ const getFunctionName = (path) => {
     }
     case "FunctionExpression":
     case "ArrowFunctionExpression": {
+      if (functionParent.parent.type === "AssignmentExpression") {
+        return functionParent.container.left.property.name;
+      }
+      const name = functionParent.node?.id?.name;
+      if (name?.includes("$")) {
+        return getFunctionName(functionParent.parentPath);
+      }
       return (
-        functionParent.parent.key?.name || functionParent.container.id?.name
+        name ||
+        functionParent.parent.key?.name ||
+        functionParent.container.id?.name
       );
     }
     default: {
